@@ -3,9 +3,7 @@
 </br>
 
 <div align="center">
-
-![image 1](/.github/image.png)
-
+<p>🚧 It is in Development 🚧</p>
 </div>
 
 </br>
@@ -39,28 +37,19 @@ git clone https://github.com/guilhermelinosx/api-login-form.git
 
 </br>
 
-- Start the Application in Development
+- Start the Container
 
 ```shell
-yarn up
+docker compose up --build
 ```
 
 </br>
 
-- Stop the Application in Development
+- Stop the Container
+
+	- To stop the Container click CTRL+C in your terminal and then type
 
 ```shell
-yarn down
+docker ccompose down
 ```
 
-</br>
-
-- Open bash in the Application
-
-```shell
-yarn bash
-```
-
-</br>
-
-- To closed bash in the Application, write "exit" in the terminal
