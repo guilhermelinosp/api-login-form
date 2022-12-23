@@ -1,3 +1,12 @@
-FROM postgres
+FROM node:lts-alpine
 
-RUN usermod -u 1000 postgres
+RUN apk add --no-cache bash
+
+USER node
+
+WORKDIR /home/node/app
+
+EXPOSE 8080
+
+COPY */* .
+
