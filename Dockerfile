@@ -6,7 +6,12 @@ USER node
 
 WORKDIR /home/node/app
 
+COPY . .
+
+RUN yarn install
+
+RUN yarn build
+
 EXPOSE 8080
 
-COPY */* .
-
+CMD ["yarn", "start"]

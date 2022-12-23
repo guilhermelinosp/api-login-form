@@ -2,8 +2,7 @@ version: '3'
 
 services:
   server:
-    build: .docker/.
-    entrypoint: .docker/entrypoint.sh
+    build: .
     restart: always
     container_name: api
     ports:
