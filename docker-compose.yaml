@@ -13,14 +13,14 @@ services:
       - db
 
   db:
-    build: .docker/postgres/.
+    build: .docker/.
     restart: always
     container_name: db
     tty: true
     ports:
       - '5432:5432'
     volumes:
-      - .docker/postgres/data:/var/lib/postgresql/data
+      - .docker/data:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres

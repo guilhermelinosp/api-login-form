@@ -5,4 +5,4 @@ node_modules
 coverage
 *.lock
 .env
-.docker/postgres/data
+.docker/data
