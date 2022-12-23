@@ -6,7 +6,7 @@
 	"author": "Guilherme Lino <guilhermelinosp@gmail.com>",
 	"scripts": {
 		"start:prod": "node dist/shared/server/index.js",
-		"start:dev": "yarn install && nodemon --watch './' --exec 'ts-node --transpile-only src/shared/server/index.ts' -e .",
+		"start:dev": "nodemon --watch './' --exec 'ts-node --transpile-only src/shared/server/index.ts' -e .",
 		"prebuild": "rimraf dist",
 		"build": "tsc -p tsconfig.build.json && copyfiles -u 1 \"./src/shared/utils/views/*\" \"./dist\"",
 		"commit": "cz",
