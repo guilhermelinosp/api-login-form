@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { compare } from 'bcryptjs'
 import { sign } from 'jsonwebtoken'
 import { InternalApiError } from '../../shared/utils/errors/internalAppError'
@@ -31,7 +32,7 @@ export class SignInService {
 
 		const token = sign({}, process.env.JWT_SECRET as string, {
 			subject: userCheckEmail.id,
-			expiresIn: '1d'
+			expiresIn: process.env.JWT_EXPIRES_IN as string
 		})
 
 		const ip = os.networkInterfaces().eth0?.[0].address

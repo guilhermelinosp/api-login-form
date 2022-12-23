@@ -2,20 +2,15 @@
 	"name": "api-login-form",
 	"version": "1.0.0",
 	"license": "MIT",
-	"repository": "https://github.com/guilhermelinosx/api-login-form.git",
-	"author": "Guilherme Lino <guilhermelinosx@gmail.com>",
+	"repository": "https://github.com/guilhermelinosp/api-login-form.git",
+	"author": "Guilherme Lino <guilhermelinosp@gmail.com>",
 	"scripts": {
-		"up": "docker compose up --build",
-		"down": "docker-compose down",
-		"bash": "docker-compose exec api bash",
-		"start": "node dist/shared/server/index.js",
-		"start:watch": "nodemon --watch './' --exec 'node dist/shared/server/index.js' -e .",
-		"start:dev": "yarn install && nodemon --watch './' --exec 'ts-node --transpile-only src/shared/server/index.ts' -e ts,tsx,json,js,jsx",
-		"build": "rimraf dist && tsc -p tsconfig.build.json && copyfiles -u 1 \"./src/shared/utils/views/*\" \"./dist\"",
-		"build:watch": "rimraf dist && tsc -p tsconfig.build.json -w && copyfiles -u 1 \"./src/shared/utils/views/*\" \"./dist\"",
+		"start:prod": "node dist/shared/server/index.js",
+		"start:dev": "yarn install && nodemon --watch './' --exec 'ts-node --transpile-only src/shared/server/index.ts' -e .",
+		"prebuild": "rimraf dist",
+		"build": "tsc -p tsconfig.build.json && copyfiles -u 1 \"./src/shared/utils/views/*\" \"./dist\"",
 		"commit": "cz",
 		"pre-commit": "lint-staged",
-		"typeorm": "ts-node ./node_modules/typeorm/cli.js",
 		"fix": "prettier  --write . && eslint . --fix"
 	},
 	"devDependencies": {
@@ -72,7 +67,7 @@
 	"lint-staged": {
 		"**/*.{ts,tsx,js,jsx}": [
 			"prettier --write",
-			"eslint . --fix"
+			"eslint --fix"
 		]
 	}
 }
